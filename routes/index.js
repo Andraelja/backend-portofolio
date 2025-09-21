@@ -1,0 +1,27 @@
+const express = require("express");
+
+const router = express.Router();
+
+const loginController = require("../controllers/LoginController");
+const homeController = require("../controllers/HomeController");
+const userController = require("../controllers/UserController");
+
+const { validateLogin } = require("../utils/validators/auth");
+
+router.post("/login", validateLogin, loginController.login);
+
+// Home
+router.get("/home", homeController.findHome);
+router.post("/home", homeController.createHome);
+router.get("/home/:id", homeController.findHomeById);
+router.put("/home/:id", homeController.updateHome);
+router.delete("/home/:id", homeController.deleteHome);
+
+// user
+router.get("/user", userController.findUser);
+router.post("/user", userController.createUser);
+router.get("/user/:id", userController.findUserById);
+router.put("/user/:id", userController.updateUser);
+router.delete("/user/:id", userController.deleteUser);
+
+module.exports = router;
