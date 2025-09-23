@@ -5,6 +5,7 @@ const router = express.Router();
 const loginController = require("../controllers/LoginController");
 const homeController = require("../controllers/HomeController");
 const userController = require("../controllers/UserController");
+const portofolioController = require("../controllers/PortofolioController");
 
 const { validateLogin } = require("../utils/validators/auth");
 
@@ -23,5 +24,12 @@ router.post("/user", userController.createUser);
 router.get("/user/:id", userController.findUserById);
 router.put("/user/:id", userController.updateUser);
 router.delete("/user/:id", userController.deleteUser);
+
+// Portofolio
+router.get("/portofolio", portofolioController.findPortofolio);
+router.post("/portofolio", portofolioController.createPortofolio);
+router.get("/portofolio/:id", portofolioController.findPortofolioById);
+router.put("/portofolio/:id", portofolioController.updatePortofolio);
+router.delete("/portofolio/:id", portofolioController.deletePortofolio);
 
 module.exports = router;
