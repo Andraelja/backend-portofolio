@@ -6,10 +6,12 @@ const loginController = require("../controllers/LoginController");
 const homeController = require("../controllers/HomeController");
 const userController = require("../controllers/UserController");
 const portofolioController = require("../controllers/PortofolioController");
+const registerController = require('../controllers/RegisterController');
 
 const { validateLogin } = require("../utils/validators/auth");
 
 router.post("/login", validateLogin, loginController.login);
+router.post("/register", validateLogin, registerController.register);
 
 // Home
 router.get("/home", homeController.findHome);
