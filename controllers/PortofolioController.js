@@ -12,6 +12,7 @@ const findPortofolio = async (req, res) => {
         id: true,
         nama: true,
         foto: true,
+        deskripsi: true
       },
       orderBy: {
         id: "desc",
@@ -62,6 +63,7 @@ const createPortofolio = async (req, res) => {
       data: {
         nama: req.body.nama,
         foto: fotoUrl,
+        deskripsi: req.body.deskripsi,
       },
     });
 
@@ -90,6 +92,7 @@ const findPortofolioById = async (req, res) => {
         id: true,
         nama: true,
         foto: true,
+        deskripsi: true
       },
     });
 
@@ -158,6 +161,7 @@ const updatePortofolio = async (req, res) => {
       data: {
         nama: req.body.nama,
         foto: fotoUrl,
+        deskripsi: req.body.deskripsi,
       },
     });
 
