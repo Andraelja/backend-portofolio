@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.use('/', router);
+app.use('/api', router);
 
-module.exports = app;
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+})
