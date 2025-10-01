@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.use('/api', router);
+app.use('/', router);
 
 module.exports = app;
