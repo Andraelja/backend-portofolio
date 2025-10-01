@@ -7,6 +7,7 @@ const homeController = require("../controllers/HomeController");
 const userController = require("../controllers/UserController");
 const portofolioController = require("../controllers/PortofolioController");
 const registerController = require('../controllers/RegisterController');
+const skillController = require('../controllers/SkillController');
 
 const { validateLogin } = require("../utils/validators/auth");
 
@@ -33,5 +34,12 @@ router.post("/portofolio", portofolioController.createPortofolio);
 router.get("/portofolio/:id", portofolioController.findPortofolioById);
 router.put("/portofolio/:id", portofolioController.updatePortofolio);
 router.delete("/portofolio/:id", portofolioController.deletePortofolio);
+
+// Skill
+router.get("/skill", skillController.findSkill);
+router.post("/skill", skillController.createSkill);
+router.get("/skill/:id", skillController.findSkillById);
+router.put("/skill/:id", skillController.updateSkill);
+router.delete("/skill/:id", skillController.deleteSkill);
 
 module.exports = router;

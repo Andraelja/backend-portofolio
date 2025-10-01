@@ -45,3 +45,11 @@ model Portofolio {
 
   @@map("portofolio")
 }
+
+model Skill {
+  id         Int    @id @default(autoincrement())
+  nama       String @db.VarChar(255)
+  persentase Int    @db.Int()
+
+  @@map("skill")
+}
